@@ -1,3 +1,4 @@
+package classes;
 import java.io.Serializable;
 
 public abstract class Person implements Serializable{
@@ -13,10 +14,16 @@ public abstract class Person implements Serializable{
 		this.passwd = passwd;
 		this.ent = ent;
 	}
-	
-	//atr pochodny
+
 	public String getEmail() {
 		return uName + "@" + ent.name + ".pl";
+	}
+	
+	public void addEntity(Entity e) {
+		if(this.ent != e) {
+			this.ent = e;
+			e.addWorker(this);
+		}
 	}
 	
 	public String toString() {

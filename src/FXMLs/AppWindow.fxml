@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1172.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLs.AppWindowController">
+   <children>
+      <Label layoutX="1060.0" layoutY="57.0" text="Select Project">
+         <font>
+            <Font name="Lucida Sans Unicode" size="13.0" />
+         </font></Label>
+      <Label layoutX="28.0" layoutY="93.0" text="Your issues:">
+         <font>
+            <Font name="Lucida Sans Unicode" size="13.0" />
+         </font></Label>
+      <Label layoutX="606.0" layoutY="95.0" text="Issues being watched:">
+         <font>
+            <Font name="Lucida Sans Unicode" size="13.0" />
+         </font>
+      </Label>
+      <ToggleButton fx:id="showClosedBtn" layoutX="810.0" layoutY="81.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="88.0" text="Show closed">
+         <font>
+            <Font name="Lucida Sans Unicode" size="12.0" />
+         </font>
+      </ToggleButton>
+      <TableView fx:id="yourIssuesTable" layoutX="28.0" layoutY="121.0" prefHeight="551.0" prefWidth="538.0">
+        <columns>
+          <TableColumn prefWidth="62.0" text="ID" />
+          <TableColumn prefWidth="126.0" text="Title" />
+            <TableColumn prefWidth="105.0" text="Category" />
+            <TableColumn minWidth="7.0" prefWidth="56.0" text="Priority" />
+            <TableColumn prefWidth="100.0" text="Status" />
+            <TableColumn minWidth="6.0" prefWidth="87.0" text="Last update" />
+        </columns>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TableView>
+      <Button fx:id="logoutBtn" layoutX="1091.0" layoutY="16.0" mnemonicParsing="false" onAction="#logOut" text="Logout" />
+      <TableView fx:id="watchedIssuesTable" layoutX="606.0" layoutY="121.0" prefHeight="551.0" prefWidth="538.0">
+         <columns>
+            <TableColumn prefWidth="62.0" text="ID" />
+            <TableColumn prefWidth="126.0" text="Title" />
+            <TableColumn prefWidth="105.0" text="Category" />
+            <TableColumn minWidth="7.0" prefWidth="56.0" text="Priority" />
+            <TableColumn prefWidth="100.0" text="Status" />
+            <TableColumn minWidth="6.0" prefWidth="87.0" text="Last update" />
+         </columns>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TableView>
+      <Label fx:id="entityLbl" layoutX="135.0" layoutY="20.0" prefHeight="25.0" prefWidth="54.0" text="entity">
+         <font>
+            <Font name="Lucida Sans Unicode" size="10.0" />
+         </font>
+      </Label>
+      <Label fx:id="usernameLbl" layoutX="28.0" layoutY="12.0" text="Username">
+         <font>
+            <Font name="Lucida Sans Unicode" size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="addIssueBtn" layoutX="28.0" layoutY="67.0" mnemonicParsing="false" onAction="#addNewIssue" text="+ Add issue">
+         <font>
+            <Font name="Lucida Sans Unicode" size="11.0" />
+         </font>
+      </Button>
+      <ChoiceBox fx:id="projectCBox" layoutX="921.0" layoutY="83.0" prefHeight="25.0" prefWidth="224.0" />
+   </children>
+</AnchorPane>

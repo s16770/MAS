@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory name="HibernateSessionFactory">
+        <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+        <property name="hibernate.connection.url">jdbc:sqlserver://\\DESKTOP-6HAG2U2:1434;databaseName=s16770;integratedSecurity=true</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+        <property name="hbm2ddl.auto">update</property>
+        <mapping class="classes.Administrator" />
+        <mapping class="classes.Category" />
+        <mapping class="classes.Client" />
+        <mapping class="classes.Company" />
+        <mapping class="classes.Engineer" />
+        <mapping class="classes.Entity" />
+        <mapping class="classes.Manager" />
+        <mapping class="classes.Person" />
+        <mapping class="classes.Project" />
+        <mapping class="classes.Status" />
+        <mapping class="classes.User" />
+        <mapping class="classes.UserIssue" />
+    </session-factory>
+</hibernate-configuration>

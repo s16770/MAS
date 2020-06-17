@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="issuePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1172.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLs.IssueWindowController">
+   <children>
+      <TabPane layoutY="54.0" prefHeight="646.0" prefWidth="1172.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Issue Info">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="617.0" prefWidth="1127.0">
+                     <children>
+                        <TableView fx:id="issueInfoTable" layoutX="30.0" layoutY="29.0" prefHeight="560.0" prefWidth="1112.0">
+                          <columns>
+                            <TableColumn prefWidth="175.0" text="Field" />
+                            <TableColumn prefWidth="937.0" text="Data" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Comments">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="commentTable" layoutX="31.0" layoutY="122.0" prefHeight="468.0" prefWidth="1112.0">
+                          <columns>
+                            <TableColumn prefWidth="250.0" text="User" />
+                            <TableColumn prefWidth="862.0" text="Comment" />
+                          </columns>
+                        </TableView>
+                        <TextArea fx:id="commentArea" layoutX="31.0" layoutY="22.0" prefHeight="84.0" prefWidth="961.0" promptText="Write comment" />
+                        <RadioButton fx:id="privateBtn" layoutX="1048.0" layoutY="73.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="88.0" text="Private" />
+                        <Button fx:id="publishBtn" layoutX="1021.0" layoutY="22.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="122.0" text="Publish" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Attached Files">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="fileList" layoutX="30.0" layoutY="53.0" prefHeight="542.0" prefWidth="1112.0" />
+                        <Button fx:id="addFileBtn" layoutX="1073.0" layoutY="14.0" mnemonicParsing="false" text="+ Add file" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Modification History">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="modificationTable" layoutX="30.0" layoutY="27.0" prefHeight="560.0" prefWidth="1112.0">
+                          <columns>
+                            <TableColumn prefWidth="120.0" text="Date" />
+                            <TableColumn prefWidth="120.0" text="User" />
+                              <TableColumn prefWidth="870.0" text="Modification" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Users Watching">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="watchingTable" layoutX="30.0" layoutY="27.0" prefHeight="560.0" prefWidth="1112.0">
+                           <columns>
+                              <TableColumn prefWidth="191.0" text="Date" />
+                              <TableColumn prefWidth="919.0" text="User" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Label fx:id="usernameLbl" layoutX="29.0" layoutY="14.0" text="Username">
+         <font>
+            <Font name="Lucida Sans Unicode" size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="logoutBtn" layoutX="1091.0" layoutY="16.0" mnemonicParsing="false" onAction="#logOut" text="Logout" />
+      <Button fx:id="issueListBtn" layoutX="1018.0" layoutY="16.0" mnemonicParsing="false" text="Issue List" />
+      <Label fx:id="entityLbl" layoutX="136.0" layoutY="22.0" prefHeight="25.0" prefWidth="54.0" text="entity">
+         <font>
+            <Font name="Lucida Sans Unicode" size="10.0" />
+         </font>
+      </Label>
+      <Button fx:id="watchBtn" layoutX="902.0" layoutY="16.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="105.0" text="Watch issue" />
+   </children>
+</AnchorPane>

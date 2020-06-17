@@ -1,3 +1,4 @@
+package Models;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -31,8 +32,10 @@ public abstract class Entity implements Serializable{
 	}
 	
 	public void addWorker(Person person) {
-		this.workers.add(person);
-		person.ent = this;
+		if(!workers.contains(person)) {
+			this.workers.add(person);
+			person.ent = this;
+		}
 	}
 	
 	public String toString() {

@@ -1,3 +1,6 @@
+package classes;
+
+import FXMLs.*;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -8,10 +11,15 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Scanner;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-public class Main {
+public class Main extends Application{
 
-	public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
+	public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException{
 		
 		File dbFile = new File("db_file");
 		int selection = 0;
@@ -41,8 +49,10 @@ public class Main {
 				
 			}else if(selection == 3) {
 				
+				
 				Project.showProjects();
 				Project.showCriticalIssues();
+				launch(args);
 			}
 		}
 	}
@@ -60,27 +70,42 @@ public class Main {
 		Client cl2 = new Client("cTest2");
 		Client cl3 = new Client("cTest3");
 		
-		Issue iss1 = new Issue(111, "awaria firewalla", "Przeciazony data plane", "breakdown", 4, user1);
-		Issue iss2 = new Issue(122, "konsultacja dlp", "Metoda wdra¿ania dlp", "consultation", 2, user1);
-		Issue iss3 = new Issue(133, "zmiana hasla", "Proœba o zmiane hasla uzytkownika jankow", "users", 3, user2);
-		
-		iss1.writeComment("This is a comment that has been written for testing purposes", false, user1);
-		iss2.writeComment("Comments are like box of chocolates", false, user2);
-		
 		Project p1 = new Project(1, "projektTestowy", "Sprawdzanie dzia³ania ekstensji");
 		Project p2 = new Project(2, "pTestowy2", "testestestestest");
 		Project p3 = new Project(2, "pTestowy3", "testestestestest");
 		
-		p1.addIssue(iss2);
-		p1.addIssue(iss3);
-		p3.addIssue(iss1);
+		Engineer eng = new Engineer("Jakub", "Soski", "jaksos", "2wsxzaq1", com3);
+		
+		p1.addIssueToProject(111, "awaria firewalla", "Przeciazony data plane", "breakdown", 4, user1);
+		p1.addIssueToProject(122, "konsultacja dlp", "Metoda wdra¿ania dlp", "consultation", 2, user1);
+		p3.addIssueToProject(133, "zmiana hasla", "Proœba o zmiane hasla uzytkownika jankow", "users", 3, user2);
+		
+		p1.getIssue(111).writeComment("This is a comment that has been written for testing purposes", false, user1);
+		p3.getIssue(133).writeComment("Comments are like box of chocolates", false, user2);
+		
+		p1.getIssue(122).assignEngineer(eng);
+		
+		UserIssue ui1 = new UserIssue(user1, p1.getIssue(111));
+		UserIssue ui2 = new UserIssue(user2, p1.getIssue(111));
 		
 		com.addProjectQualif(p1);
 		cl.addProjectQualif(p1);
-		
-		
-		
-		System.out.println(iss1.getEngineer());
+
 	}
+	
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		
+		Parent root = FXMLLoader.load(getClass().getResource("/FXMLs/LoginWindow.fxml"));
+		
+		Scene scene = new Scene(root);
+
+		primaryStage.setScene(scene);
+		primaryStage.setTitle("SystemObslugiZgloszen");
+		primaryStage.show();
+
+	}
+	
+	
 
 }

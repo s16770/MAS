@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.media.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="newIssuePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="614.0" prefWidth="932.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLs.AddIssueWindowController">
+   <children>
+      <Label layoutX="429.0" layoutY="33.0" text="New Issue">
+         <font>
+            <Font name="Lucida Sans Unicode" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="377.0" layoutY="65.0" text="Please enter required information" />
+      <Label layoutX="69.0" layoutY="116.0" text="Project" />
+      <Label layoutX="69.0" layoutY="167.0" text="Title" />
+      <Label layoutX="69.0" layoutY="214.0" text="Description" />
+      <Label layoutX="69.0" layoutY="361.0" text="Category" />
+      <Label layoutX="69.0" layoutY="400.0" text="Priority" />
+      <Label layoutX="69.0" layoutY="442.0" text="Attach file" />
+      <TextField fx:id="titleField" layoutX="195.0" layoutY="163.0" prefHeight="25.0" prefWidth="661.0" />
+      <ChoiceBox fx:id="projectCBox" layoutX="195.0" layoutY="112.0" prefHeight="25.0" prefWidth="290.0" />
+      <TextArea fx:id="descriptionField" layoutX="196.0" layoutY="206.0" prefHeight="122.0" prefWidth="661.0" />
+      <RadioButton fx:id="installationBtn" layoutX="196.0" layoutY="361.0" mnemonicParsing="false" text="Installation" />
+      <RadioButton fx:id="breakdownBtn" layoutX="292.0" layoutY="361.0" mnemonicParsing="false" text="Breakdown" />
+      <RadioButton fx:id="usersBtn" layoutX="400.0" layoutY="361.0" mnemonicParsing="false" text="Users" />
+      <RadioButton fx:id="modificationBtn" layoutX="480.0" layoutY="361.0" mnemonicParsing="false" text="Modification" />
+      <RadioButton fx:id="consultationBtn" layoutX="594.0" layoutY="361.0" mnemonicParsing="false" text="Consultation" />
+      <ListView fx:id="fileList" layoutX="196.0" layoutY="444.0" prefHeight="94.0" prefWidth="661.0" />
+      <Button layoutX="69.0" layoutY="466.0" mnemonicParsing="false" text="+ Add" />
+      <ChoiceBox fx:id="priorityCBox" layoutX="195.0" layoutY="396.0" prefHeight="25.0" prefWidth="80.0">
+      </ChoiceBox>
+      <Button fx:id="createIssueBtn" layoutX="769.0" layoutY="556.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="88.0" text="Create" />
+   </children>
+</AnchorPane>

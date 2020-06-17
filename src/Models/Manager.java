@@ -1,3 +1,4 @@
+package Models;
 
 public class Manager extends Engineer{
 	
@@ -6,8 +7,11 @@ public class Manager extends Engineer{
 	}
 	
 	//przeciazenie
-	public void assignIssue(Issue iss, Engineer eng) {
-		eng.assignedIssues.add(iss);
-		iss.engineer = eng;
+	public void assignIssue(Project.Issue iss, Engineer eng) {
+		if(!eng.assignedIssues.contains(iss)) {
+			eng.assignedIssues.add(iss);
+			iss.assignEngineer(eng);
+		}
 	}
+	
 }
